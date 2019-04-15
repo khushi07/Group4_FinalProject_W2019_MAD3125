@@ -6,20 +6,19 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.group_4_shoppingapp.Fragment.AboutFragment;
-import com.example.group_4_shoppingapp.Fragment.CartFragment;
 import com.example.group_4_shoppingapp.Fragment.ContactFragment;
-import com.example.group_4_shoppingapp.Fragment.ProductsFragment;
 import com.example.group_4_shoppingapp.R;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
-public class ListActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -29,6 +28,10 @@ public class ListActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Home Screen");
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -41,11 +44,11 @@ public class ListActivity extends AppCompatActivity implements NavigationView.On
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        if(savedInstanceState == null) {
+        /*if(savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                    new ProductsFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_product);
-        }
+        }*/
 
     }
 
@@ -53,12 +56,16 @@ public class ListActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
             case R.id.nav_product:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ProductsFragment()).commit();
+                logout();
+                Intent in = new Intent(this, ProductsActivity.class);
+                startActivity(in);
+                finish();
                 break;
             case R.id.nav_cart:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new CartFragment()).commit();
+                logout();
+                Intent in1 = new Intent(this, CartActivity.class);
+                startActivity(in1);
+                finish();
                 break;
             case R.id.nav_aboutUs:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -70,8 +77,8 @@ public class ListActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_logout:
                 logout();
-                Intent in = new Intent(this, LoginMainActivity.class);
-                startActivity(in);
+                Intent in2 = new Intent(this, LoginMainActivity.class);
+                startActivity(in2);
                 finish();
                 break;
 
@@ -86,8 +93,7 @@ public class ListActivity extends AppCompatActivity implements NavigationView.On
 
     private void logout() {
 
-                Intent mIntent = new Intent(ListActivity.this, SignupActivity.class);
-                //Set value to pass on next activity
+                Intent mIntent = new Intent(HomeActivity.this, HomeActivity.class);
                 startActivity(mIntent);
     }
 

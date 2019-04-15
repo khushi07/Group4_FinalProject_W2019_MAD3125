@@ -1,24 +1,14 @@
 package com.example.group_4_shoppingapp.Fragment;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Intent;
 
-import com.example.group_4_shoppingapp.R;
+import com.example.group_4_shoppingapp.Activities.ProductsActivity;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class ProductsFragment extends Fragment  {
+public class ProductsFragment extends AppCompatActivity {
 
-        @Nullable
-        @Override
-        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.fragment_products, container, false);
-
-        }
+    Intent intent = new Intent(ProductsFragment.this, ProductsActivity.class);
 
 
     }

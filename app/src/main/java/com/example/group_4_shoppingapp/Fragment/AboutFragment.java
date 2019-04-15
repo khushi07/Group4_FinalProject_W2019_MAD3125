@@ -11,6 +11,7 @@ import com.example.group_4_shoppingapp.R;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 
 public class AboutFragment extends Fragment {
@@ -23,9 +24,11 @@ public class AboutFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_about, container, false);
 
         WebView webView = (WebView)view.findViewById(R.id.webview);
-        webView.loadUrl("https://www.facebook.com/");
+        webView.loadUrl("https://www.google.com/");
         webView.getSettings().setJavaScriptEnabled(true); //enable javascript
         webView.setWebViewClient(new WebViewClient()); //important to open url in app
         return view;
+
+
     }
 }

@@ -9,6 +9,8 @@ import android.widget.ImageView;
 
 import com.example.group_4_shoppingapp.Activities.LoginMainActivity;
 
+import androidx.appcompat.app.ActionBar;
+
 
 public class SplashScreen extends LoginMainActivity {
 
@@ -22,6 +24,10 @@ public class SplashScreen extends LoginMainActivity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.activity_splash_screen);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Splash Screen");
+
         logo=(ImageView)findViewById(R.id.logo);
 
         /* New Handler to start the Menu-Activity

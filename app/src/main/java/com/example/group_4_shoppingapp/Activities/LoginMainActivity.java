@@ -1,5 +1,6 @@
 package com.example.group_4_shoppingapp.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -23,6 +24,9 @@ public class LoginMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_main);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Login Here");
+
         edtUserEmail = findViewById(R.id.edtUserEmail);
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
@@ -37,7 +41,7 @@ public class LoginMainActivity extends AppCompatActivity {
                 Boolean chkemailpass = db.emailpassword(email,password);
                   if(chkemailpass==true){
                       Toast.makeText(getApplicationContext(),"Successful Login",Toast.LENGTH_SHORT).show();
-                Intent mIntent = new Intent(LoginMainActivity.this, ListActivity.class);
+                Intent mIntent = new Intent(LoginMainActivity.this, HomeActivity.class);
                 //Set value to pass on next activity
                 startActivity(mIntent);}
                   else {

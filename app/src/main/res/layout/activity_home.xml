@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/back"
-    tools:context=".Activities.ListActivity"
+    android:background="@drawable/cartback"
+    tools:context=".Activities.HomeActivity"
     android:id="@+id/drawerLayout">
 
     <LinearLayout
@@ -25,12 +25,7 @@
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </FrameLayout>
+        android:layout_height="match_parent"/>
 
     </LinearLayout>
 

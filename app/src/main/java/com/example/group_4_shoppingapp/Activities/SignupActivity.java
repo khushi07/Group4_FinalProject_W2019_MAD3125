@@ -1,5 +1,6 @@
 package com.example.group_4_shoppingapp.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -29,6 +30,9 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Sign Up Here");
 
         db = new DatabaseHelper(this);
 
