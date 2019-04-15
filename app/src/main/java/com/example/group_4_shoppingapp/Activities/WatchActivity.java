@@ -102,15 +102,15 @@ public class WatchActivity extends AppCompatActivity {
                 total=price*value;
                 Boolean chkInsert=db.insert(adapter.names[position],total.toString(),adapter.images[position], ModelUser.email);
                 if(chkInsert){
-                    Intent cIntent = new Intent(WatchActivity.this, CartActivity.class);
-                    //Set value to pass on next activity
-                    startActivity(cIntent);
                     Toast.makeText(getApplicationContext(), "Product added", Toast.LENGTH_SHORT).show();
                     System.out.println("Product Added");
+                    Intent cIntent = new Intent(WatchActivity.this, CartActivity.class);
+                    startActivity(cIntent);
                 }
-                else{
+                else  {
                     Toast.makeText(getApplicationContext(), "Product not added", Toast.LENGTH_LONG).show();
                 }
+
             }
         });
 

@@ -54,4 +54,11 @@
         android:background="@android:color/transparent"
         android:text="Send"/>
 
+    <Button
+        android:id="@+id/button_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Call"
+        android:background="@android:color/transparent"/>
+
 </LinearLayout>

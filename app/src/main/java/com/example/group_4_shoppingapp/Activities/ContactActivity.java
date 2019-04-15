@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +31,19 @@ public class ContactActivity extends AppCompatActivity {
         mEditTextMessage = findViewById(R.id.edit_text_message);
 
         Button buttonSend = findViewById(R.id.button_send);
+        Button buttonCall = findViewById(R.id.button_call);
+        buttonCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                call();
+            }
+
+            private void call() {
+               Intent intent =new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:+14374888996"));
+                startActivity(intent);
+            }
+        });
         buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

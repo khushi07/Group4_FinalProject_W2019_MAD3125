@@ -20,6 +20,7 @@ public class CartActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Cart View");
+
         db = new DatabaseHelper(this);
         Boolean checkCart=db.chkCart(ModelUser.email);
         if(checkCart){
@@ -34,4 +35,4 @@ public class CartActivity extends AppCompatActivity {
 }
 
 
-//https://www.youtube.com/watch?v=_9o_ZJUgUWE
+

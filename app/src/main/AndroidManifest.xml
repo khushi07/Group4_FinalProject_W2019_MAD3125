@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.group_4_shoppingapp">
 
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -28,8 +29,7 @@
         </activity>
         <activity android:name=".Activities.HomeActivity" />
         <activity
-            android:name=".Activities.CartActivity"
-            android:parentActivityName=".Activities.HomeActivity" />
+            android:name=".Activities.CartActivity"/>
         <activity
             android:name=".Activities.ProductsActivity"
             android:parentActivityName=".Activities.HomeActivity" />
