@@ -43,6 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+
     public long insertNote(UserData note) {
         // get writable database as we want to write data
         SQLiteDatabase db = this.getWritableDatabase();

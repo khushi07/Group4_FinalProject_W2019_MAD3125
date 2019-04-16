@@ -58,14 +58,14 @@
         app:layout_constraintVertical_bias="0.6" />
 
     <TextView
-        android:id="@+id/khushi2"
+        android:id="@+id/chandan"
         android:layout_width="262dp"
         android:layout_height="82dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Khushbu Khushbu (CO748593)"
+        android:text="Chandan Swan (CO748593)"
         android:textAlignment="center"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,14 +76,14 @@
         app:layout_constraintVertical_bias="0.74" />
 
     <TextView
-        android:id="@+id/khushi3"
+        android:id="@+id/ayub"
         android:layout_width="262dp"
         android:layout_height="82dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Khushbu Khushbu (CO748593)"
+        android:text="Mohammed Ayub Ali (CO748593)"
         android:textAlignment="center"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"

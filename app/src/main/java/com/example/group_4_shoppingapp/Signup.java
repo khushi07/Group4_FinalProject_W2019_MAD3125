@@ -49,6 +49,11 @@ public class Signup extends AppCompatActivity {
 
         db = new DatabaseHelper(this);
 
+
+
+
+
+
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +67,7 @@ public class Signup extends AppCompatActivity {
 
                 UserData user1 = new UserData(edtCpass.getId(),edtFname.getText().toString(),edtFname.getText().toString());
                 createNote(user1);
+
 
 
 
@@ -158,7 +164,7 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if (which == 0) {
-                  //  showNoteDialog(true, notesList.get(position), position);
+                  // showNoteDialog(true, notesList.get(position), position);
                 } else {
                     deleteNote(position);
                 }
