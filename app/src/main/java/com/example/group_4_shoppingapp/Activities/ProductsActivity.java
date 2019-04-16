@@ -2,29 +2,20 @@ package com.example.group_4_shoppingapp.Activities;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
-import com.example.group_4_shoppingapp.models.ListItem;
 
-import com.example.group_4_shoppingapp.MyAdapter;
 import com.example.group_4_shoppingapp.R;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ProductsActivity extends AppCompatActivity {
 
-
-
-   private static final String URL_DATA = "http://www.json-generator.com/api/json/get/cpNxCGuopu?indent=2";
-
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-
-    private List<ListItem> listItems;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,46 +26,27 @@ public class ProductsActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Products List");
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        listView = (ListView) findViewById(R.id.listview);
+        MyAdapter adapter =new MyAdapter(this);
 
-        listItems = new ArrayList<>();
+        listView.setAdapter(adapter);
 
-        ListItem listItem1 = new ListItem("S928 Sports Watch" , "Android 4.3+ / iOS 8.0+");
-        listItems.add(listItem1);
-        ListItem listItem2 = new ListItem("Pebble Time Smart Watch" , "Android 4.3+ / iOS 6.0+");
-        listItems.add(listItem2);
-        ListItem listItem3 = new ListItem("Samsung Gear S3" , "Android 4.3+ / iOS 8.0+");
-        listItems.add(listItem3);
-        ListItem listItem4 = new ListItem("Motorola MOTO 360 Sport" , "Android 4.3+ / iOS 8.2+");
-        listItems.add(listItem4);
-        ListItem listItem5 = new ListItem("Xiaomi Amazfit" , "Android 4.4+ / iOS 9.0+");
-        listItems.add(listItem5);
-        ListItem listItem6 = new ListItem("Huawie Watch 2" , "Android 4.4+ / iOS 9.0+");
-        listItems.add(listItem6);
-        ListItem listItem7 = new ListItem("ASUS ZenWatch 3" , "Android 4.3+ / iOS 8.4+");
-        listItems.add(listItem7);
-        ListItem listItem8 = new ListItem("Apple Watch Series 3" , "iOS 11+");
-        listItems.add(listItem8);
-        ListItem listItem9 = new ListItem("Garmin Fenix 3" , "Android 4.3+ / iOS 7.0+");
-        listItems.add(listItem9);
-        ListItem listItem10 = new ListItem("KingWear KW88" , "Android 5.1+");
-        listItems.add(listItem10);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(getApplicationContext(),WatchActivity.class);
+                intent.putExtra("Position", position);
+
+                startActivity(intent);
+
+            }
+        });
+
+    }
+}
 
 
-
-
-       /* for(int i = 0; i<=10; i ++)
-        {
-            ListItem listItem = new ListItem("heading" + (i+1) , "hi");
-            listItems.add(listItem);
-        }*/
-
-        adapter = new MyAdapter(listItems,this);
-
-        recyclerView.setAdapter(adapter);
-    }}
 /*
        loadRecyclerViewData();
     }
