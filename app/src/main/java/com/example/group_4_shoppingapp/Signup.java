@@ -155,6 +155,7 @@ public class Signup extends AppCompatActivity {
      * Edit - 0
      * Delete - 0
      */
+    /*
     private void showActionsDialog(final int position) {
         CharSequence colors[] = new CharSequence[]{"Edit", "Delete"};
 
@@ -164,7 +165,7 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if (which == 0) {
-                  // showNoteDialog(true, notesList.get(position), position);
+                  showNoteDialog(true, notesList.get(position), position);
                 } else {
                     deleteNote(position);
                 }
@@ -233,7 +234,7 @@ public class Signup extends AppCompatActivity {
                 }
             }
         });
-    }
+    }*/
 
     /**
      * Toggling list and empty notes view
