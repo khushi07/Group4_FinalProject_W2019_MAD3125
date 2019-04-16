@@ -72,8 +72,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         new AboutFragment()).commit();
                 break;
             case R.id.nav_contactUs:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ContactFragment()).commit();
+                logout();
+                Intent in3 = new Intent(this, ContactActivity.class);
+                startActivity(in3);
+                finish();
                 break;
             case R.id.nav_logout:
                 logout();

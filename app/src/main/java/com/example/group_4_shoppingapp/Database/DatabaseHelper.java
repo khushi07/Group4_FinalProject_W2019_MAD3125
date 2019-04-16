@@ -9,6 +9,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+
+    public static final String DATABASE_NAME = "mylist.db";
+    public static final String TABLE_NAME = "mylist.data";
+    public static final String COL1 = "ID";
+    public static final String COL2 = "name";
+
+
     public DatabaseHelper(@Nullable Context context) {
         super(context, "Login.db", null, 1);
     }

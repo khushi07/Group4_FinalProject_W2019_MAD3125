@@ -2,17 +2,16 @@ package com.example.group_4_shoppingapp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.group_4_shoppingapp.models.ListItem;
 
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
@@ -40,7 +39,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         holder.textViewHead.setText(listItem.getHead());
         holder.textViewDesc.setText(listItem.getDesc());
-        //holder.imageView.setImageURI(Uri.parse("file://" + mMediaStorageDir.getPath() + "/" + mDataset[position]));
+      //  holder.imageView.setImageResource(R.id.watchImage);
     }
 
     @Override
@@ -52,14 +51,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         public TextView textViewHead;
         public TextView textViewDesc;
-        public ImageView imageView;
+      //  public ImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             textViewHead = (TextView) itemView.findViewById(R.id.textViewHead);
             textViewDesc = (TextView) itemView.findViewById(R.id.textViewDesc);
-            imageView = (ImageView) itemView.findViewById(R.id.watchImage);
+         //   imageView = (ImageView) itemView.findViewById(R.id.watchImage);
 
         }
     }
