@@ -67,7 +67,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/no_items_found" />
+              />
 
             <LinearLayout
                 android:id="@+id/top_icon_detail"

@@ -1,17 +1,9 @@
 package com.example.group_4_shoppingapp.Activities;
 
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.example.group_4_shoppingapp.Fragment.AboutFragment;
 import com.example.group_4_shoppingapp.Fragment.CartFragment;
@@ -19,6 +11,12 @@ import com.example.group_4_shoppingapp.Fragment.ContactFragment;
 import com.example.group_4_shoppingapp.Fragment.ProductsFragment;
 import com.example.group_4_shoppingapp.R;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

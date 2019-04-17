@@ -1,34 +1,17 @@
-package com.example.group_4_shoppingapp;
-
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-
-import androidx.recyclerview.widget.ItemTouchHelper;
-import androidx.recyclerview.widget.RecyclerView;
+package com.example.group_4_shoppingapp.Fragment;
 
 
-public class CartFragment extends Fragment implements OnStartDragListener {
+import androidx.fragment.app.Fragment;
 
-    private static FrameLayout noItemDefault;
+public class CartFragment extends Fragment  {
+
+   /* private static FrameLayout noItemDefault;
     private static RecyclerView recyclerView;
     private ItemTouchHelper mItemTouchHelper;
     public CartFragment() {
     }
 
-    /**
 
-     */
     public static void updateMyCartFragment(boolean showList) {
 
         if (showList) {
@@ -55,7 +38,7 @@ public class CartFragment extends Fragment implements OnStartDragListener {
 
         view.findViewById(R.id.slide_down).setVisibility(View.VISIBLE);
         view.findViewById(R.id.slide_down).setOnTouchListener(
-                new OnTouchListener() {
+                new View.OnTouchListener() {
 
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
@@ -90,7 +73,7 @@ public class CartFragment extends Fragment implements OnStartDragListener {
             recyclerView.setAdapter(shoppinListAdapter);
 
             shoppinListAdapter
-                    .SetOnItemClickListener(new OnItemClickListener() {
+                    .SetOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                         @Override
                         public void onItemClick(View view, int position) {
@@ -117,7 +100,7 @@ public class CartFragment extends Fragment implements OnStartDragListener {
         }
 
         view.findViewById(R.id.start_shopping).setOnClickListener(
-                new OnClickListener() {
+                new View.OnClickListener() {
 
                     @Override
                     public void onClick(View v) {
@@ -140,10 +123,10 @@ public class CartFragment extends Fragment implements OnStartDragListener {
                 if (event.getAction() == KeyEvent.ACTION_UP
                         && keyCode == KeyEvent.KEYCODE_BACK) {
 
-                    Utils.switchContent(R.id.frag_container,
-                            Utils.HOME_FRAGMENT,
-                            ((ECartHomeActivity) (getContext())),
-                            AnimationType.SLIDE_UP);
+                 //   Utils.switchContent(R.id.frag_container,
+                   //         Utils.HOME_FRAGMENT,
+                     //       ((ECartHomeActivity) (getContext())),
+                       //     AnimationType.SLIDE_UP);
 
                 }
                 return true;
@@ -156,6 +139,6 @@ public class CartFragment extends Fragment implements OnStartDragListener {
     @Override
     public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
         mItemTouchHelper.startDrag(viewHolder);
-    }
+    }*/
 
 }
