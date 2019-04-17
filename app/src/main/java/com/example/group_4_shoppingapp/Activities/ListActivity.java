@@ -19,7 +19,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ListActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -86,7 +86,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private void logout() {
 
-                Intent mIntent = new Intent(HomeActivity.this, SignupActivity.class);
+                Intent mIntent = new Intent(ListActivity.this, SignupActivity.class);
                 //Set value to pass on next activity
                 startActivity(mIntent);
     }

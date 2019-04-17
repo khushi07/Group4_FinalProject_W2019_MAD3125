@@ -4,8 +4,8 @@ package com.example.group_4_shoppingapp.Fragment;
 import androidx.fragment.app.Fragment;
 
 public class CartFragment extends Fragment  {
-
-   /* private static FrameLayout noItemDefault;
+/*
+    private static FrameLayout noItemDefault;
     private static RecyclerView recyclerView;
     private ItemTouchHelper mItemTouchHelper;
     public CartFragment() {

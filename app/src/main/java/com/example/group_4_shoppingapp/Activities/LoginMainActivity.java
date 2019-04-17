@@ -37,7 +37,7 @@ public class LoginMainActivity extends AppCompatActivity {
                 Boolean chkemailpass = db.emailpassword(email,password);
                   if(chkemailpass==true){
                       Toast.makeText(getApplicationContext(),"Successful Login",Toast.LENGTH_SHORT).show();
-                Intent mIntent = new Intent(LoginMainActivity.this, HomeActivity.class);
+                Intent mIntent = new Intent(LoginMainActivity.this, ListActivity.class);
                 //Set value to pass on next activity
                 startActivity(mIntent);}
                   else {
