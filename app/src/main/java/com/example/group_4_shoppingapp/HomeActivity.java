@@ -1,15 +1,11 @@
 package com.example.group_4_shoppingapp;
 
-
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-
 import android.os.Bundle;
 import android.view.MenuItem;
-
-
 
 public class HomeActivity extends AppCompatActivity {
 
