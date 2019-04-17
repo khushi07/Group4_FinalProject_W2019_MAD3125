@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/mobiles"
+
     tools:context=".Activities.WatchActivity">
 
     <ImageView
@@ -17,15 +18,18 @@
         android:layout_marginTop="17dp"
         android:layout_marginEnd="112dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/back" />
+        android:src="@drawable/a" />
 
     <Button
         android:id="@+id/btnnext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="5dp"
+        android:background="#49c6c7"
+        android:text="Next" />
 
     <TextView
         android:id="@+id/MobileName"
@@ -38,6 +42,7 @@
         android:layout_marginStart="13dp"
         android:layout_marginTop="29dp"
         android:text="S928 Sports Watch"
+        android:textSize="30sp"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:textStyle="bold"/>
 
@@ -53,6 +58,69 @@
         android:layout_marginTop="33dp"
         android:text="price"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="97dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginBottom="192dp"
+        android:background="#49c6c7"
+        android:text="+"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/add3"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="617dp"
+        android:layout_marginEnd="37dp"
+        android:background="#49c6c7"
+        android:text="ADD TO CART"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/add2"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="282dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="192dp"
+        android:background="#49c6c7"
+        android:text="-"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="181dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginBottom="192dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
 </RelativeLayout>

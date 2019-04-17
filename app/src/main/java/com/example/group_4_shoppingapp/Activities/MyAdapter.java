@@ -15,9 +15,10 @@ public class MyAdapter extends BaseAdapter {
 
     Context c;
 
-    String[] names = {"S928 Sports Watch","Pebble Time Smart Watch","Samsung Gear S3","Motorola Moto 360 Sport","Xiaomi Amazfit",
+    String[] names = {"S928 Sports Watch","Pebble Time Watch","Samsung Gear S3","Motorola Moto 360 Sport","Xiaomi Amazfit",
             "Huawei Watch 2","ASUS ZenWatch 3","Apple Watch Series 3","Germin Fenix 3","KingWear KW88"};
-    String[] price = {"124.65","199.99","219.20","324.50","333.33","119.32","204.56","217.99","320.21","240.45"};
+    String[] price = {"$124.65","$199.99","$219.20","$324.50","$333.33","$119.32","$204.56","$217.99",
+            "$320.21","$240.45"};
     int[] images = {R.drawable.watch1,R.drawable.watch2,R.drawable.watch3,R.drawable.watch4,R.drawable.watch5,R.drawable.watch6,
             R.drawable.watch7,R.drawable.watch8,R.drawable.watch9,R.drawable.watch10,};
 
