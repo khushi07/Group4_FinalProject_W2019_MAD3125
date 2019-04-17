@@ -15,11 +15,9 @@ import javax.xml.datatype.Duration;
 
 public class LoginMainActivity extends AppCompatActivity {
 
-    private EditText edtUserEmail;
-    private EditText edtPassword;
-    private Button btnLogin;
-    private Button btnSignup;
-
+    private EditText edtUserEmail, edtPassword;
+    private Button btnLogin, btnSignup;
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,26 +28,24 @@ public class LoginMainActivity extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnSignup = findViewById(R.id.btnSignup);
+        db = new DatabaseHelper(this);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+       btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = edtUserEmail.getText().toString();
-                String pwd = edtPassword.getText().toString();
-
-                if (email.equals("admin") && pwd.equals("admin@123")) {
-                    //Navigate to NEXT Activity
-                    Intent mIntent = new Intent(LoginMainActivity.this, HomeActivity.class);
-                    //Set value to pass on next activity
-                    startActivity(mIntent);
-                } else if (email.equals("") && pwd.equals("")) {
-                    String err = "Empty Fields Not Allowed";
-                    Toast.makeText(LoginMainActivity.this, err, Toast.LENGTH_LONG).show();
-                } else {
-                    String err1 = "Invalid E-mail/Password";
-                    Toast.makeText(LoginMainActivity.this, err1, Toast.LENGTH_LONG).show();
-                }
+                String password = edtPassword.getText().toString();
+                Boolean chkemailpass = db.emailpassword(email,password);
+                  if(chkemailpass==true){
+                      Toast.makeText(getApplicationContext(),"Successful Login",Toast.LENGTH_SHORT).show();
+                Intent mIntent = new Intent(LoginMainActivity.this, HomeActivity.class);
+                //Set value to pass on next activity
+                startActivity(mIntent);}
+                  else {
+                      Toast.makeText(getApplicationContext(), "Wrong email/password", Toast.LENGTH_SHORT).show();
+                  }
             }
+
         });
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override

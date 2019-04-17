@@ -14,8 +14,9 @@ import android.widget.Toast;
 
 public class Signup extends AppCompatActivity {
 
-    private Button done;
-    private Button clear;
+    DatabaseHelper db;
+
+    private Button done,login;
     private EditText edtFname,edtLname,edtEmail,edtNpass,edtCpass;
     private RadioButton radioFemale, radioMale;
 
@@ -26,8 +27,10 @@ public class Signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        db = new DatabaseHelper(this);
+
         done = findViewById(R.id.done);
-        clear = findViewById(R.id.clear);
+        login = findViewById(R.id.login);
         edtFname = findViewById(R.id.edtFname);
         edtLname = findViewById(R.id.edtLname);
         edtEmail = findViewById(R.id.edtEmail);
@@ -40,26 +43,38 @@ public class Signup extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(Signup.this, LoginMainActivity.class);
-                //Set value to pass on next activity
-                startActivity(mIntent);
-                String SignedIn = "Successfully Signed In";
-                Toast.makeText(Signup.this, SignedIn, Toast.LENGTH_LONG).show();
+                String email = edtEmail.getText().toString();
+                String Npass = edtNpass.getText().toString();
+                String Cpass = edtCpass.getText().toString();
+                if (email.equals("") || Npass.equals("") || Cpass.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Fields Are Empty", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (Npass.equals(Cpass)) {
+                        Boolean chkemail = db.chkemail(email);
+
+                        if (chkemail == true) {
+                            Boolean insert = db.insert(email, Npass);
+                            if (insert == true) {
+                                Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Email Already Exists", Toast.LENGTH_SHORT).show();
+                        }
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Password do not match", Toast.LENGTH_SHORT).show();
+                    }
+                }
 
             }
         });
 
-        clear.setOnClickListener(new View.OnClickListener() {
+    login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Set the first EditText empty
-                edtCpass.setText("");
-                edtEmail.setText("");
-                edtNpass.setText("");
-                edtFname.setText("");
-                edtLname.setText("");
-                radioFemale.setChecked(false);
-                radioMale.setChecked(false);
+                Intent mIntent = new Intent(Signup.this, LoginMainActivity.class);
+                //Set value to pass on next activity
+                startActivity(mIntent);
 
             }
         });
