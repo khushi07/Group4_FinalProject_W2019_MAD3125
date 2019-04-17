@@ -100,6 +100,9 @@ public class WatchActivity extends AppCompatActivity {
                 Double total;
                 Double price=Double.parseDouble(adapter.price[position]);
                 total=price*value;
+                System.out.println("total:"+total);
+                String tot=total.toString();
+                System.out.println("total:"+tot);
                 Boolean chkInsert=db.insert(adapter.names[position],total.toString(),adapter.images[position], ModelUser.email);
                 if(chkInsert){
                     Toast.makeText(getApplicationContext(), "Product added", Toast.LENGTH_SHORT).show();

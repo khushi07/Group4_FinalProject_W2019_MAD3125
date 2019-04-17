@@ -24,12 +24,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
       db.execSQL("Create table user(email text primary key,password text)");
-      db.execSQL("Create table cart(prod_name text,total_price text,image text)");
+      db.execSQL("Create table cart(prod_name text,total_price text,image text,email text)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
      db.execSQL("drop table if exists user");
+     db.execSQL("drop table if exists cart");
     }
 
     //inserting in database
@@ -48,6 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("prod_name",prod_name);
         contentValues.put("total_price",total_price);
         contentValues.put("image",Integer.toString(image));
+        contentValues.put("email",email);
         long ins=db.insert("cart",null,contentValues);
         if(ins==-1) return false;
         else return true;
@@ -59,6 +61,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("Select * from cart where email=?",new String[] {email});
         if(cursor.getCount()>=1) return true;
         else return false;
+    }
+
+    public Cursor getCartDetails(String email){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor c= db.rawQuery("Select * from cart where email=?",new String[]{email});
+        System.out.println("cursor passed with size"+c.getCount()+"+"+c.getColumnCount());
+        return c;
     }
 
     //checking if email exists
