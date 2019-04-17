@@ -22,6 +22,7 @@ public class AboutFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_about, container, false);
+
 /*
         WebView webView = (WebView)view.findViewById(R.id.webview);
         webView.loadUrl("https://www.google.com/");
@@ -31,4 +32,5 @@ public class AboutFragment extends Fragment {
 
 
     }
+
 }

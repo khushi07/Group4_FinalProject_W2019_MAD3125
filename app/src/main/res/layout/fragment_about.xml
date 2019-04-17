@@ -7,7 +7,6 @@
     android:orientation="vertical"
     android:background="@drawable/back" >
 
-
     <ImageView
         android:id="@+id/chart"
         android:layout_width="437dp"
@@ -16,7 +15,6 @@
         android:background="@drawable/grow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/aboutdata"
@@ -82,6 +80,5 @@ Company Address : 392 Spadina Ave, Toronto, ON M5T 2G5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.347" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

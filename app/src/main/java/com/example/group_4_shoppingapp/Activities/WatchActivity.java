@@ -1,5 +1,6 @@
 package com.example.group_4_shoppingapp.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -19,6 +20,9 @@ public class WatchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_watch);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Product Details");
 
         Intent intent = getIntent();
         position = intent.getExtras().getInt("Position");
