@@ -88,7 +88,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private void logout() {
 
-                Intent mIntent = new Intent(HomeActivity.this, LoginMainActivity.class);
+                Intent mIntent = new Intent(HomeActivity.this, SignupActivity.class);
                 //Set value to pass on next activity
                 startActivity(mIntent);
     }
