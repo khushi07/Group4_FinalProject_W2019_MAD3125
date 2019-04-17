@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.strictmode.SqliteObjectLeakedViolation;
 
 import androidx.annotation.Nullable;
 
@@ -23,6 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
       db.execSQL("Create table user(email text primary key,password text)");
+      db.execSQL("Create table cart(prod_name text,total_price text,image text)");
     }
 
     @Override
@@ -39,6 +41,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long ins = db.insert("user", null, contentValues);
         if(ins==-1) return false;
         else return true;
+    }
+    public boolean insert(String prod_name,String total_price, int image,String email){
+        SQLiteDatabase db=this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put("prod_name",prod_name);
+        contentValues.put("total_price",total_price);
+        contentValues.put("image",Integer.toString(image));
+        long ins=db.insert("cart",null,contentValues);
+        if(ins==-1) return false;
+        else return true;
+    }
+
+    //checking cart exists
+    public Boolean chkCart(String email){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select * from cart where email=?",new String[] {email});
+        if(cursor.getCount()>=1) return true;
+        else return false;
     }
 
     //checking if email exists

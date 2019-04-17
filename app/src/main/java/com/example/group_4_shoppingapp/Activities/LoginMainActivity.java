@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.group_4_shoppingapp.Database.DatabaseHelper;
+import com.example.group_4_shoppingapp.ModelUser;
 import com.example.group_4_shoppingapp.R;
 
 public class LoginMainActivity extends AppCompatActivity {
@@ -41,6 +43,7 @@ public class LoginMainActivity extends AppCompatActivity {
                 Boolean chkemailpass = db.emailpassword(email,password);
                   if(chkemailpass==true){
                       Toast.makeText(getApplicationContext(),"Successful Login",Toast.LENGTH_SHORT).show();
+                      ModelUser.email=email;
                 Intent mIntent = new Intent(LoginMainActivity.this, HomeActivity.class);
                 startActivity(mIntent);}
                   else {
