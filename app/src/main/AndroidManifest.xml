@@ -16,7 +16,8 @@
         <activity
             android:name=".Activities.ContactActivity"
             android:parentActivityName=".Activities.HomeActivity" />
-        <activity android:name=".Activities.SignupActivity" />
+        <activity android:name=".Activities.SignupActivity"
+            android:parentActivityName=".Activities.LoginMainActivity"/>
         <activity android:name=".Activities.LoginMainActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>

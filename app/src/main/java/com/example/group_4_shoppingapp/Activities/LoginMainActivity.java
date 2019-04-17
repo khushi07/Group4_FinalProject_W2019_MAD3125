@@ -42,7 +42,6 @@ public class LoginMainActivity extends AppCompatActivity {
                   if(chkemailpass==true){
                       Toast.makeText(getApplicationContext(),"Successful Login",Toast.LENGTH_SHORT).show();
                 Intent mIntent = new Intent(LoginMainActivity.this, HomeActivity.class);
-                //Set value to pass on next activity
                 startActivity(mIntent);}
                   else {
                       Toast.makeText(getApplicationContext(), "Wrong email/password", Toast.LENGTH_SHORT).show();
@@ -54,7 +53,6 @@ public class LoginMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent mIntent = new Intent(LoginMainActivity.this, SignupActivity.class);
-                //Set value to pass on next activity
                 startActivity(mIntent);
             }
         });
