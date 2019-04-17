@@ -41,11 +41,11 @@ public class ListActivity extends AppCompatActivity implements NavigationView.On
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //if(savedInstanceState == null) {
-          //  getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-            //        new ProductsFragment()).commit();
-            //navigationView.setCheckedItem(R.id.nav_product);
-        //}
+        if(savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                   new ProductsFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_product);
+        }
 
     }
 
