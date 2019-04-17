@@ -1,4 +1,4 @@
-package com.example.group_4_shoppingapp;
+package com.example.group_4_shoppingapp.Database;
 
 import android.content.ContentValues;
 import android.content.Context;

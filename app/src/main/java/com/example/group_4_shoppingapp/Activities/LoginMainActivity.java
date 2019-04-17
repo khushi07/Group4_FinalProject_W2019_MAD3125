@@ -1,17 +1,16 @@
-package com.example.group_4_shoppingapp;
+package com.example.group_4_shoppingapp.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import javax.xml.datatype.Duration;
+import com.example.group_4_shoppingapp.Database.DatabaseHelper;
+import com.example.group_4_shoppingapp.R;
 
 public class LoginMainActivity extends AppCompatActivity {
 
@@ -50,7 +49,7 @@ public class LoginMainActivity extends AppCompatActivity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mIntent = new Intent(LoginMainActivity.this, Signup.class);
+                Intent mIntent = new Intent(LoginMainActivity.this, SignupActivity.class);
                 //Set value to pass on next activity
                 startActivity(mIntent);
             }

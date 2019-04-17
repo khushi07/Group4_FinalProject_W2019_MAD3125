@@ -1,4 +1,4 @@
-package com.example.group_4_shoppingapp;
+package com.example.group_4_shoppingapp.Activities;
 
 
 import androidx.annotation.NonNull;
@@ -8,9 +8,16 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.example.group_4_shoppingapp.Fragment.AboutFragment;
+import com.example.group_4_shoppingapp.Fragment.CartFragment;
+import com.example.group_4_shoppingapp.Fragment.ContactFragment;
+import com.example.group_4_shoppingapp.Fragment.ProductsFragment;
+import com.example.group_4_shoppingapp.R;
 import com.google.android.material.navigation.NavigationView;
 
 
@@ -64,14 +71,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         new ContactFragment()).commit();
                 break;
             case R.id.nav_logout:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ContactFragment()).commit();
+                logout();
+                Intent in = new Intent(this, LoginMainActivity.class);
+                startActivity(in);
+                finish();
+                break;
+
+            default:
                 break;
 
         }
 
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void logout() {
+
+                Intent mIntent = new Intent(HomeActivity.this, LoginMainActivity.class);
+                //Set value to pass on next activity
+                startActivity(mIntent);
     }
 
     @Override

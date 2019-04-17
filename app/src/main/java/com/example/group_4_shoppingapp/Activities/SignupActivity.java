@@ -1,4 +1,4 @@
-package com.example.group_4_shoppingapp;
+package com.example.group_4_shoppingapp.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,12 +11,15 @@ import android.widget.RadioButton;
 
 import android.widget.Toast;
 
+import com.example.group_4_shoppingapp.Database.DatabaseHelper;
+import com.example.group_4_shoppingapp.R;
 
-public class Signup extends AppCompatActivity {
+
+public class SignupActivity extends AppCompatActivity {
 
     DatabaseHelper db;
 
-    private Button done,login;
+    private Button register;
     private EditText edtFname,edtLname,edtEmail,edtNpass,edtCpass;
     private RadioButton radioFemale, radioMale;
 
@@ -29,8 +32,7 @@ public class Signup extends AppCompatActivity {
 
         db = new DatabaseHelper(this);
 
-        done = findViewById(R.id.done);
-        login = findViewById(R.id.login);
+        register = findViewById(R.id.register);
         edtFname = findViewById(R.id.edtFname);
         edtLname = findViewById(R.id.edtLname);
         edtEmail = findViewById(R.id.edtEmail);
@@ -40,7 +42,7 @@ public class Signup extends AppCompatActivity {
         radioMale = findViewById(R.id.radioMale);
 
 
-        done.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = edtEmail.getText().toString();
@@ -56,6 +58,9 @@ public class Signup extends AppCompatActivity {
                             Boolean insert = db.insert(email, Npass);
                             if (insert == true) {
                                 Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
+                                Intent mIntent = new Intent(SignupActivity.this, LoginMainActivity.class);
+                                //Set value to pass on next activity
+                                startActivity(mIntent);
                             }
                         } else {
                             Toast.makeText(getApplicationContext(), "Email Already Exists", Toast.LENGTH_SHORT).show();
@@ -68,15 +73,6 @@ public class Signup extends AppCompatActivity {
             }
         });
 
-    login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Set the first EditText empty
-                Intent mIntent = new Intent(Signup.this, LoginMainActivity.class);
-                //Set value to pass on next activity
-                startActivity(mIntent);
 
-            }
-        });
     }}
 
